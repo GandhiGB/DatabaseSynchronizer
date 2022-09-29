@@ -4,7 +4,7 @@
 define('DB_HOST','localhost');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
-define('DB_NAME', 'tccac');
+define('DB_NAME', 'testdb');
 
 //Connecting to the database
 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			$response['message'] = 'Please try later';
 		}
 
-		//displaying the data in json format
+		//returning the data in json format
 		echo json_encode($response);
 	}
 
@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			$response['message'] = 'Error updating record';
 		}
 
-		//displaying the data in json format
+		//returning the data in json format
 		echo json_encode($response);
 	}
 
@@ -82,7 +82,7 @@ else{
 	$response['error'] = true;
 	$response['message'] = "Invalid request";
 
-	//displaying the data in json format
+	//returning the data in json format
 	echo json_encode($response);
 
 }
